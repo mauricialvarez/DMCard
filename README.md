@@ -1,36 +1,36 @@
 # Programa de Vantagens DMCard - Landing Page
 
-## Description
+## Descrição
 
-This repository contains the source code for the landing page of the "Programa de Vantagens DMCard".
+Este repositório contém o código-fonte da landing page do "Programa de Vantagens DMCard".
 
-The landing page aims to introduce the DMCard rewards program, present the development team, and collect user feedback and survey data through a contact form.
+A landing page tem como objetivo apresentar o programa de recompensas DMCard, introduzir a equipe de desenvolvimento e coletar feedback de usuários e dados de pesquisa através de um formulário de contato.
 
-## Project Context
+## Contexto do Projeto
 
-This project was developed as part of the Tech Challenger for the Pós-Graduação Tech Management at FIAP by the following team members:
+Este projeto foi desenvolvido como parte do Tech Challenger da Pós-Graduação em Tech Management na FIAP pelos seguintes membros da equipe:
 
 *   Guilherme Silva Lima
 *   Ivan Ferreira Alexandrino
 *   Maurici Dias Alvarez
 *   Wander Ribeiro de Chico
 
-## Technologies Used
+## Tecnologias Utilizadas
 
 *   HTML5
 *   CSS3
 
-## How to View
+## Como Visualizar
 
-To view the landing page, simply clone this repository and open the `index.html` file in your preferred web browser.
+Para visualizar a landing page, simplesmente clone este repositório e abra o arquivo `index.html` em seu navegador web de preferência.
 
-For example, after cloning:
+Por exemplo, após clonar:
 ```bash
-git clone <repository-url>
-cd <repository-directory>
-# Then open index.html in your browser (e.g., by double-clicking or using a command like 'open index.html' or 'start index.html')
+git clone <url-do-repositorio>
+cd <diretorio-do-repositorio>
+# Em seguida, abra o index.html em seu navegador (ex: clicando duas vezes ou usando um comando como 'open index.html' ou 'start index.html')
 ```
 
-## Form Functionality Note
+## Observação sobre a Funcionalidade do Formulário
 
-The contact/survey form on this page uses a `mailto:` link. Submitting the form will attempt to open your default email client with the form data pre-filled. For the data to be sent, you will need to complete the sending process through your email client. This method is used for simplicity in this static page demonstration; a production environment would typically use a backend server to process form submissions.
+O formulário de contato/pesquisa nesta página utiliza um link `mailto:`. O envio do formulário tentará abrir o seu cliente de e-mail padrão com os dados do formulário pré-preenchidos. Para que os dados sejam enviados, você precisará concluir o processo de envio através do seu cliente de e-mail. Este método é utilizado para simplificar a demonstração desta página estática; um ambiente de produção normalmente utilizaria um servidor backend para processar os envios de formulário.
