@@ -1,0 +1,129 @@
+/* Styles for Programa de Vantagens DMCard */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: #0779e4 3px solid;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 20px 0;
+}
+
+main section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#introduction, #team, #contact-form, #references, #annexes {
+    /* Specific styles for these sections can be added here if needed,
+       but for now, they share the common 'main section' styling. */
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    main section {
+        padding: 15px;
+    }
+}
+
+/* Form Styles */
+#contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#contact-form p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+#surveyForm div {
+    margin-bottom: 15px;
+}
+
+#surveyForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#surveyForm input[type="text"],
+#surveyForm input[type="email"],
+#surveyForm select,
+#surveyForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Prevents padding from affecting width */
+}
+
+#surveyForm textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+#surveyForm button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #0779e4; /* Button color - can be DMCard brand color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#surveyForm button[type="submit"]:hover {
+    background-color: #0560b0; /* Darker shade on hover */
+}
