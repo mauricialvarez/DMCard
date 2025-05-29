@@ -3,100 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa de Vantagens DMCard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Programa Mais Vantagens DMCard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #00529B; /* Azul DMCard (aproximado) */
+        }
+        .section-bg {
+            background-color: #f0f4f8; /* Um cinza claro para contraste */
+        }
+        .card-bg {
+            background-color: #ffffff;
+        }
+        .btn-primary {
+            background-color: #FFC107; /* Amarelo DMCard (aproximado) */
+            color: #003366; /* Azul escuro para contraste no botão */
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #FFD54F; /* Amarelo mais claro no hover */
+        }
+        /* Estilo para o modal de confirmação */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 500px;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Programa de Vantagens DMCard</h1>
-        </header>
-        <main>
-            <section id="introduction">
-                <h2>Bem-vindo ao Programa de Vantagens DMCard!</h2>
-                <p>Nosso objetivo é recompensar sua fidelidade! O Programa de Vantagens DMCard foi concebido para oferecer benefícios exclusivos aos clientes de supermercados e varejo que utilizam os cartões private label DMCard. Acumule pontos a cada compra e troque por recompensas financeiras, como descontos em fatura ou vales-compra. Queremos que sua experiência de compra seja ainda mais vantajosa!</p>
-                <p>Este projeto foi desenvolvido como parte do Tech Challenger da Pós-Graduação Tech Management da FIAP.</p>
-            </section>
-            <section id="team">
-                <h2>Nossa Equipe</h2>
-                <ul>
-                    <li>Guilherme Silva Lima</li>
-                    <li>Ivan Ferreira Alexandrino</li>
-                    <li>Maurici Dias Alvarez</li>
-                    <li>Wander Ribeiro de Chico</li>
+<body class="bg-gray-100">
+
+    <header class="hero-bg text-white py-16 sm:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <img src="https://placehold.co/150x50/ffffff/00529B?text=DMCard+Logo" alt="[Logo DMCard]" class="mx-auto mb-8 h-12 sm:h-16" onerror="this.src='https://placehold.co/150x50/ffffff/00529B?text=DMCard+Logo'; this.onerror=null;">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Suas Compras com DMCard Vão Valer Muito Mais!</h1>
+            <p class="text-lg sm:text-xl mb-8">Apresentamos o Programa Mais Vantagens DMCard: transforme seus gastos em supermercados e varejo em recompensas incríveis!</p>
+            <a href="#formulario" class="btn-primary font-semibold py-3 px-8 rounded-lg text-lg hover:shadow-lg">Quero Saber Mais!</a>
+        </div>
+    </header>
+
+    <section id="desafio" class="py-12 sm:py-16 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 sm:mb-12">🛒 O Desafio: Compras que Poderiam Render Mais</h2>
+            <div class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
+                <p class="mb-4">Sabemos que você utiliza seu DMCard para as compras do dia a dia, especialmente em supermercados. No entanto, identificamos uma dor comum: a ausência de um programa de fidelidade que realmente recompense seus gastos, gerando uma sensação de oportunidade perdida em relação a outros meios de pagamento.</p>
+                <p>Nossa persona, Ana, uma mãe de família que faz compras semanais e busca economizar, representa bem esse sentimento. Ela e muitos outros clientes sentem falta de um "algo a mais" que valorize sua fidelidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucao" class="py-12 sm:py-16 card-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 sm:mb-12">✨ Nossa Solução: Programa Mais Vantagens DMCard!</h2>
+            <div class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed mb-8">
+                <p class="mb-4">Para resolver essa dor, criamos o <strong>Programa Mais Vantagens DMCard</strong>! Um programa de fidelidade simples, prático e totalmente integrado ao seu app DMCard.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Como funciona?</h3>
+                <p class="mb-4">É fácil! A cada compra realizada com seu DMCard nos supermercados e varejistas parceiros, você acumula pontos. Esses pontos podem ser trocados por recompensas financeiras diretas, como:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li>Descontos direto na sua fatura DMCard.</li>
+                    <li>Vales-compra digitais para usar nos supermercados parceiros.</li>
+                    <li>E futuramente, muito mais! (incluindo cupons surpresa e gamificação com missões mensais!)</li>
                 </ul>
-            </section>
-            <section id="contact-form">
-                <h2>Formulário de Contato e Pesquisa</h2>
-                <p>Por favor, preencha o formulário abaixo. Ao clicar em "Enviar Pesquisa", seu cliente de e-mail será aberto para enviar os dados.</p>
-                <form id="surveyForm" action="mailto:pesquisa-dmcard@example.com" method="POST" enctype="text/plain">
-                    <div>
-                        <label for="fullName">Nome Completo:</label>
-                        <input type="text" id="fullName" name="fullName" required>
-                    </div>
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="supermarketFrequency">Com que frequência você usa o DMCard no supermercado?</label>
-                        <select id="supermarketFrequency" name="supermarketFrequency">
-                            <option value="Semanalmente">Semanalmente</option>
-                            <option value="2-3 vezes por mês">2-3 vezes por mês</option>
-                            <option value="Mensalmente">Mensalmente</option>
-                            <option value="Esporadicamente">Esporadicamente</option>
-                            <option value="Não uso DMCard no supermercado">Não uso DMCard no supermercado</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="loyaltyImportance">Quão importantes são os programas de fidelidade para você?</label>
-                        <select id="loyaltyImportance" name="loyaltyImportance">
-                            <option value="Muito importantes">Muito importantes</option>
-                            <option value="Moderadamente importantes">Moderadamente importantes</option>
-                            <option value="Pouco importantes">Pouco importantes</option>
-                            <option value="Indiferentes">Indiferentes</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="currentBenefitsSatisfaction">Qual sua satisfação com os benefícios atuais do DMCard?</label>
-                        <select id="currentBenefitsSatisfaction" name="currentBenefitsSatisfaction">
-                            <option value="Muito Alta">Muito Alta</option>
-                            <option value="Alta">Alta</option>
-                            <option value="Média">Média</option>
-                            <option value="Baixa">Baixa</option>
-                            <option value="Muito Baixa">Muito Baixa</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="newProgramInterest">Qual seu interesse no novo programa de pontos DMCard para supermercados?</label>
-                        <select id="newProgramInterest" name="newProgramInterest">
-                            <option value="Muito Alto">Muito Alto</option>
-                            <option value="Alto">Alto</option>
-                            <option value="Moderado">Moderado</option>
-                            <option value="Baixo">Baixo</option>
-                            <option value="Indiferente">Indiferente</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="feedback">Principal Feedback / Sugestões:</label>
-                        <textarea id="feedback" name="feedback" rows="5"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Enviar Pesquisa</button>
-                    </div>
-                </form>
-            </section>
-            <section id="references">
-                <h2>Referências</h2>
-                <p>(Conteúdo das referências será adicionado aqui em breve.)</p>
-            </section>
-            <section id="annexes">
-                <h2>Anexos</h2>
-                <p>(Links ou conteúdo dos anexos serão adicionados aqui em breve.)</p>
-            </section>
-        </main>
-        <footer>
-        </footer>
+                <p>A ideia é que você veja um retorno direto: seus pontos virando economia de verdade!</p>
+            </div>
+             <div class="text-center">
+                <img src="https://placehold.co/600x400/00529B/FFFFFF?text=App+DMCard+com+Programa" alt="[Imagem ilustrativa do App DMCard com o programa de vantagens]" class="mx-auto rounded-lg shadow-lg" onerror="this.src='https://placehold.co/600x400/00529B/FFFFFF?text=Mockup+App'; this.onerror=null;">
+            </div>
+        </div>
+    </section>
+
+    <section id="por-que" class="py-12 sm:py-16 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 sm:mb-12">🚀 Por Que Este Programa é Para Você?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="card-bg p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Recompensas que Valem a Pena</h3>
+                    <p class="text-gray-600">Seus gastos recorrentes em supermercado se transformam em benefícios reais.</p>
+                </div>
+                <div class="card-bg p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Simplicidade Total</h3>
+                    <p class="text-gray-600">Tudo integrado no app DMCard. Acumule e resgate pontos com poucos toques.</p>
+                </div>
+                <div class="card-bg p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Mais Motivos para Usar seu DMCard</h3>
+                    <p class="text-gray-600">Além do crédito, agora você tem um grande motivo para escolher o DMCard.</p>
+                </div>
+                <div class="card-bg p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feito para Você</h3>
+                    <p class="text-gray-600">Usamos Design Thinking para criar uma solução que agrega valor real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="py-12 sm:py-16 card-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 sm:mb-12">💡 Conheça a Equipe por Trás do Projeto</h2>
+            <p class="max-w-2xl mx-auto text-center text-gray-700 text-lg mb-10">
+                Este projeto inovador está sendo desenvolvido com paixão e expertise por alunos da Pós-Graduação em Tech Management da FIAP para o Tech Challenger (Fase 1).
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 rounded-lg shadow-md section-bg">
+                    <img src="https://placehold.co/100x100/00529B/FFFFFF?text=GS" alt="[Foto de Guilherme Silva Lima]" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white" onerror="this.src='https://placehold.co/100x100/00529B/FFFFFF?text=GS'; this.onerror=null;">
+                    <h3 class="text-lg font-semibold text-gray-800">Guilherme Silva Lima</h3>
+                </div>
+                <div class="text-center p-6 rounded-lg shadow-md section-bg">
+                    <img src="https://placehold.co/100x100/00529B/FFFFFF?text=IA" alt="[Foto de Ivan Ferreira Alexandrino]" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white" onerror="this.src='https://placehold.co/100x100/00529B/FFFFFF?text=IA'; this.onerror=null;">
+                    <h3 class="text-lg font-semibold text-gray-800">Ivan Ferreira Alexandrino</h3>
+                </div>
+                <div class="text-center p-6 rounded-lg shadow-md section-bg">
+                    <img src="https://placehold.co/100x100/00529B/FFFFFF?text=MA" alt="[Foto de Maurici Dias Alvarez]" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white" onerror="this.src='https://placehold.co/100x100/00529B/FFFFFF?text=MA'; this.onerror=null;">
+                    <h3 class="text-lg font-semibold text-gray-800">Maurici Dias Alvarez</h3>
+                </div>
+                <div class="text-center p-6 rounded-lg shadow-md section-bg">
+                    <img src="https://placehold.co/100x100/00529B/FFFFFF?text=WC" alt="[Foto de Wander Ribeiro de Chico]" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white" onerror="this.src='https://placehold.co/100x100/00529B/FFFFFF?text=WC'; this.onerror=null;">
+                    <h3 class="text-lg font-semibold text-gray-800">Wander Ribeiro de Chico</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="formulario" class="py-12 sm:py-16 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-4">🗣️ Queremos Ouvir Você!</h2>
+            <p class="max-w-xl mx-auto text-center text-gray-700 text-lg mb-10 sm:mb-12">
+                Sua opinião é fundamental para lapidar o Programa Mais Vantagens DMCard. Preencha nossa pesquisa e seja um dos primeiros a saber das novidades!
+            </p>
+            <form id="feedbackForm" class="max-w-2xl mx-auto card-bg p-8 sm:p-10 rounded-lg shadow-xl space-y-6">
+                <div>
+                    <label for="nomeCompleto" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo:</label>
+                    <input type="text" id="nomeCompleto" name="nomeCompleto" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Seu Melhor Email:</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Com que frequência você utiliza o cartão DMCard em supermercados?</label>
+                    <select id="frequenciaUso" name="frequenciaUso" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Selecione uma opção</option>
+                        <option value="semanalmente">Semanalmente</option>
+                        <option value="2-3x_mes">2-3 vezes por mês</option>
+                        <option value="mensalmente">Mensalmente</option>
+                        <option value="esporadicamente">Esporadicamente</option>
+                        <option value="nao_utilizo">Não utilizo</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Qual a importância de programas de fidelidade para você?</label>
+                    <select id="importanciaFidelidade" name="importanciaFidelidade" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Selecione uma opção</option>
+                        <option value="muito_importantes">Muito importantes, sempre busco e utilizo</option>
+                        <option value="moderadamente_importantes">Moderadamente importantes, uso se for fácil</option>
+                        <option value="pouco_importantes">Pouco importantes, não costumo acompanhar</option>
+                        <option value="indiferente">Indiferente</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Como você avalia sua satisfação com os benefícios atuais oferecidos pelo DMCard (antes deste programa)?</label>
+                    <select id="satisfacaoAtual" name="satisfacaoAtual" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Selecione uma opção</option>
+                        <option value="muito_alta">Muito Alta</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Média</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="muito_baixa">Muito Baixa</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Qual seu nível de interesse em um programa de pontos DMCard que recompense suas compras em supermercados, como o descrito aqui?</label>
+                    <select id="interessePrograma" name="interessePrograma" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Selecione uma opção</option>
+                        <option value="muito_alto">Muito Alto</option>
+                        <option value="alto">Alto</option>
+                        <option value="moderado">Moderado</option>
+                        <option value="baixo">Baixo</option>
+                        <option value="indiferente">Indiferente</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="feedbackTexto" class="block text-sm font-medium text-gray-700 mb-1">Deixe seu feedback, críticas ou sugestões sobre o que você gostaria de ver no Programa Mais Vantagens DMCard:</label>
+                    <textarea id="feedbackTexto" name="feedbackTexto" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit" class="w-full btn-primary font-semibold py-3 px-6 rounded-lg text-lg hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
+                        Enviar Minha Opinião e Participar!
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p class="mb-2">&copy; 2025 Programa Mais Vantagens DMCard. Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-400">Um projeto FIAP - Pós-Graduação Tech Management.</p>
+            <p class="text-xs text-gray-500 mt-1">Imagens meramente ilustrativas. Logotipo DMCard é propriedade da DMCard.</p>
+        </div>
+    </footer>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3 class="text-2xl font-semibold text-green-600 mb-4">Obrigado!</h3>
+            <p class="text-gray-700 mb-6">Sua opinião foi registrada com sucesso. Entraremos em contato com novidades!</p>
+            <button onclick="closeModal()" class="btn-primary font-semibold py-2 px-6 rounded-lg">Fechar</button>
+        </div>
     </div>
+
+    <script>
+        // Script para o formulário e modal
+        const form = document.getElementById('feedbackForm');
+        const modal = document.getElementById('confirmationModal');
+        const closeButton = document.querySelector('.close-button');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Coleta de dados (opcional, apenas para demonstração ou futuro uso)
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            console.log('Dados do formulário:', data); // Exibe os dados no console
+
+            // Exibe o modal
+            modal.style.display = 'block';
+
+            // Limpa o formulário (opcional)
+            form.reset();
+        });
+
+        // Função para fechar o modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Fechar o modal clicando fora dele (opcional)
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
 </body>
 </html>
