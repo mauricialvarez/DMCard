@@ -1,0 +1,191 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: #0779e4 3px solid;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.2em; /* Adjusted base font size for the H1 */
+    line-height: 1.2;
+}
+
+.logo-text-dm {
+    font-weight: bold;
+    color: #0779e4; /* DMCard Blue */
+}
+
+.logo-text-card {
+    font-weight: normal; 
+    color: #fff; /* White, as header background is dark */
+}
+
+.program-name {
+    font-size: 0.6em; /* Smaller than the main logo part */
+    color: #ccc; /* Lighter grey for subtitle */
+    display: block; 
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px 0;
+}
+
+main section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Specific Section Styles (can be expanded if needed) */
+#introduction h2, 
+#team h2,
+#references h2,
+#annexes h2 {
+    color: #333;
+    margin-top: 0; /* Remove default top margin from h2 if it's the first element */
+}
+
+#team ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#team li {
+    margin-bottom: 5px;
+}
+
+/* Form Styles */
+#contact-form h2 { /* This was already present, ensuring its place in Form Styles */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Already defined, kept for clarity */
+}
+
+#contact-form p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.mailto-disclaimer {
+    font-weight: bold;
+    color: #c0392b; /* Reddish color for attention */
+    background-color: #fdf2f0; /* Light reddish background */
+    padding: 10px;
+    border: 1px solid #e74c3c; /* Reddish border */
+    border-radius: 4px;
+    /* font-size: 0.9em; /* Retaining original font-size from #contact-form p for now */
+    /* text-align: center; /* Already centered by parent #contact-form p */
+    /* margin-bottom: 20px; /* Already has margin from parent #contact-form p */
+}
+
+#surveyForm div {
+    margin-bottom: 15px;
+}
+
+#surveyForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Already defined, kept for clarity */
+}
+
+#surveyForm input[type="text"],
+#surveyForm input[type="email"],
+#surveyForm select,
+#surveyForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* This was 10px, check if it should be same as div margin-bottom */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Prevents padding from affecting width */
+}
+
+#surveyForm textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+#surveyForm button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #0779e4; /* Button color - can be DMCard brand color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#surveyForm button[type="submit"]:hover {
+    background-color: #0560b0; /* Darker shade on hover */
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px; /* Ensures space above the footer */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    main section {
+        padding: 15px;
+    }
+
+    #surveyForm input[type="text"],
+    #surveyForm input[type="email"],
+    #surveyForm select,
+    #surveyForm textarea {
+        padding: 8px; /* Slightly reduce padding on smaller screens */
+    }
+
+    #surveyForm button[type="submit"] {
+        padding: 10px; /* Adjust button padding */
+    }
+}
